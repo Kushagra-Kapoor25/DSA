@@ -11,41 +11,6 @@ struct Node
 	}
 };
 
-// void childSumPropIter(Node *root)
-// {
-// 	queue<Node *> q;
-// 	q.push(root);
-// 	bool flag = true;
-// 	while (!q.empty())
-// 	{
-// 		int size = q.size();
-// 		for (int i = 0; i < size; i++)
-// 		{
-// 			int s = 0;
-// 			Node *curr = q.front();
-// 			q.pop();
-// 			if (curr->left != NULL)
-// 			{
-// 				q.push(curr->left);
-// 				s += curr->left->data;
-// 			}
-// 			if (curr->right != NULL)
-// 			{
-// 				q.push(curr->right);
-// 				s += curr->right->data;
-// 			}
-// 			if (s != curr->data)
-// 			{
-// 				flag = false;
-// 				break;
-// 			}
-// 		}
-// 	}
-// 	if (flag)
-// 		cout << "Yes";
-// 	else
-// 		cout << "No";
-// }
 
 bool childSumProp(Node *root)
 {
@@ -72,10 +37,9 @@ int main()
 	root->right = new Node(12);
 	root->left->left = new Node(3);
 	root->left->right = new Node(5);
-	//root->right->left = new Node(4);
-	//root->right->right = new Node(1);
-	//childSumPropIter(root);
-	//cout << "\n";
+	root->right->left = new Node(4);
+	root->right->right = new Node(1);
+
 	if (childSumProp(root))
 		cout << "Yes\n";
 	else
