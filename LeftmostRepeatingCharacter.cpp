@@ -6,12 +6,12 @@ int firstRepeating(string str)
 	int fI[256];
 	for (int i = 0; i < 256; i++)
 		fI[i] = -1;
-	for (int i = 0; i < str.length(); i++)
+	for (int i = str.length() - 1; i >= 0; i --)
 	{
 		if (fI[str[i]] == -1)
 			fI[str[i]] = i;
 		else
-			res = min(res, fI[str[i]]);
+			res = fI[str[i]];
 	}
 	return (res == INT_MAX) ? -1 : res;
 }

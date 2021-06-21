@@ -36,11 +36,13 @@ int isBalancedES(Node *root)
 	if (root == NULL)
 		return 0;
 	int lh = isBalancedES(root->left);
-	int rh = isBalancedES(root->right);
 	if (lh == -1)
 		return -1;
+
+	int rh = isBalancedES(root->right);
 	if (rh == -1)
 		return -1;
+
 	if (abs(lh - rh) > 1)
 		return -1;
 	else
